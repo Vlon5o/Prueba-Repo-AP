@@ -8,6 +8,6 @@ namespace Prueba_MVC_AP.Models
     public class ClsReloj
     {
         //int hora;
-        int minuto;
+       // int minuto;
     }
 }

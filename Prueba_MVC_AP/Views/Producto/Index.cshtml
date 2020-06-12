@@ -1,0 +1,30 @@
+﻿@model Prueba_MVC_AP.Models.ClsProducto
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Index", "Producto", FormMethod.Post))
+        {
+            @Html.Label("Ingrese Producto: ")
+            @Html.TextBoxFor(model => model.producto)
+            <br />
+            <b>Selecciona los productos: </b><br />
+            @Html.ListBoxFor(x => x.SelectedProIds, Model.ProList, new { style = "width:200px" })
+            <br />
+            <input type="submit" value="Enviar" />
+        }
+
+        <h4>Seleccionaste</h4>
+        <b style="color:red">Productos: @ViewBag.Message</b>
+    </div>
+</body>
+</html>

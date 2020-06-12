@@ -1,0 +1,38 @@
+﻿@model Prueba_MVC_AP.Models.ClsEjercicio2
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        <h1>Ejercicio 2</h1>
+        @using (Html.BeginForm())
+        {
+            <input type="hidden" name="numerosactualesizq" value="@Model.numerosactualesizq" />
+
+            <div class="col-md-6" style="font-family:Arial">
+                @Html.ListBoxFor(m => m.numseleccionadosizq, Model.numerosizq, new { size = 10, @class = "listBox" })
+                <br />
+                <input type="submit" value="Enviar" />
+            </div>
+            <br />
+
+            <input type="hidden" name="numerosactualesder" value="@Model.numerosactualesder" />
+
+            <div class="col-md-6" style="font-family:Arial">
+
+                @Html.ListBoxFor(m => m.numseleccionadosder, Model.numerosder, new { size = 10, @class = "listBox" })
+                <br />
+                <input type="submit" value="Emviar" />
+            </div>
+        }
+    </div>
+</body>
+</html>
